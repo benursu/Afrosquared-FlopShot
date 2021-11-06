@@ -2,7 +2,9 @@
 ![Flop Shot](https://s3.us-west-2.amazonaws.com/www.afrosquared.com/resources/flop-shot/flop-shot.png?v=2)
 
 # Flop Shot
-### Zombie golf with brains on Instagram. Follow this link to play!
+### Zombie golf with brains.
+
+Follow this link to play on Instagram!
 
 [https://www.instagram.com/ar/1435438073524376/](https://www.instagram.com/ar/1435438073524376/)
 
@@ -36,6 +38,8 @@ Sound design was inspired by my daughter Willow.  She suggested I squish a spong
 [Play the Game](https://www.instagram.com/ar/1435438073524376/)
 
 [Meta Spark AR Community Post](https://www.facebook.com/groups/SparkARcommunity/posts/1251398938605479/?__cft__[0]=AZUOfgkVWH6Ow8Ymc6roJ2vdqtZoem64olBfOaA2ByJGHjNHxgUvtL8cmcjuwV2mpp3VWnfM5vawm6ScytZK8xptEocXQM2fHwRqci4PMpiAP6F8Rfl_an3HT6niHdDyXKiHq7Im5fi-MD3gJiiT9IGz&__tn__=%2CO%2CP-R)
+
+[Instagram Reel Post](https://www.instagram.com/reel/CVoH68KJdWz/?utm_medium=copy_link)
 
 [https://www.instagram.com/afrosquared/](https://www.instagram.com/afrosquared/)
 
