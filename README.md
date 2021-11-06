@@ -1,6 +1,6 @@
 # Flop Shot
 ## Zombie golf with brains.
-![Flop Shot](https://s3.us-west-2.amazonaws.com/www.afrosquared.com/resources/flop-shot/flop-shot.png?v=1)
+![Flop Shot](https://s3.us-west-2.amazonaws.com/www.afrosquared.com/resources/flop-shot/flop-shot.png?v=2)
 
 ## Lenslist Halloween Tricks & Treats Hackathon
 This project was a top prize winner in the awesome hackathon put on by Lenslist.  Thank you Lenslist for being such an important part of the community!  You all rock!
