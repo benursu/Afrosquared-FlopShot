@@ -9,7 +9,6 @@ Follow this link to play on Instagram!
 [https://www.instagram.com/ar/1435438073524376/](https://www.instagram.com/ar/1435438073524376/)
 
 ## Demo
-[![Watch Demo Video](https://img.youtube.com/vi/KjD0kFHc6zE/0.jpg)](https://www.youtube.com/watch?v=KjD0kFHc6zE)
 
 [Watch Demo Video on Youtube](https://www.instagram.com/ar/1435438073524376/)
 
