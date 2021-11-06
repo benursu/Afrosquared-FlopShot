@@ -11,6 +11,8 @@
 
 [Watch Demo Video on Youtube](https://www.instagram.com/ar/1435438073524376/)
 
+[Watch Demo Video on Instagram Reels](https://www.instagram.com/reel/CVoH68KJdWz/?utm_medium=copy_link)
+
 ## Lenslist Halloween Tricks & Treats Hackathon
 This project was a top prize winner in the awesome hackathon put on by Lenslist.  Thank you Lenslist for being such an important part of the community!  You all rock!
 
