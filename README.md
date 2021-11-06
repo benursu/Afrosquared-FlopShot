@@ -1,5 +1,5 @@
 
-![Flop Shot](https://s3.us-west-2.amazonaws.com/www.afrosquared.com/resources/flop-shot/flop-shot.png?v=2)
+![Flop Shot](https://s3.us-west-2.amazonaws.com/www.afrosquared.com/resources/flop-shot/flop-shot.jpg?v=1)
 
 # Flop Shot
 ### Zombie golf with brains.
