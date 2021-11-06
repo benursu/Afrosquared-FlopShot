@@ -32,6 +32,7 @@ import { PlaneTracker } from './planeTracker';
 //////////////////////////////////////////////////////////////////////////
 //configuration variables
 
+const zombieBlendTrees = ['zombieMixed', 'zombieShadowMixed', 'zombieIdle', 'zombieWalk', 'zombieSwing', 'zombieDance'];
 const zombieBones = ['Hips', 'Spine', 'Spine1', 'Spine2', 'Neck', 'Head', 'HeadTop_End', 'LeftShoulder', 'LeftArm', 'LeftForeArm', 'LeftHand', 'LeftHandThumb1', 'LeftHandThumb2', 'LeftHandThumb3', 'LeftHandIndex1', 'LeftHandIndex2', 'LeftHandMiddle1', 'LeftHandMiddle2', 'LeftHandRing1', 'LeftHandRing2', 'LeftHandRing3', 'LeftHandPinky1', 'LeftHandPinky2', 'RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'RightHandThumb1', 'RightHandThumb2', 'RightHandThumb3', 'RightHandIndex1', 'RightHandIndex2', 'RightHandMiddle1', 'RightHandMiddle2', 'RightHandRing1', 'RightHandRing2', 'RightHandRing3', 'RightHandPinky1', 'RightHandPinky2', 'LeftUpLeg', 'LeftLeg', 'LeftFoot', 'LeftToeBase', 'RightUpLeg', 'RightLeg', 'RightFoot', 'RightToeBase'];
 const brainsTotal = 6;
 const settings = {};
@@ -43,7 +44,7 @@ let debug = false;
 
 
 //////////////////////////////////////////////////////////////////////////
-//preload
+//Big thanks to the following!
 
 //Zombie Character and Animations provided by Adobe Mixamo
 //https://www.mixamo.com/
@@ -59,6 +60,14 @@ let debug = false;
 
 //Flag Pole by Frank Vitale @creativefrv
 //https://www.instagram.com/creativefrv/
+
+//Lenslist Halloween Tricks & Treats Hackathon
+//https://lenslist.co/dare/lenslist-x-spark-ar-present-call-for-content-1-halloween-trickstreats/
+
+
+
+//////////////////////////////////////////////////////////////////////////
+//preload
 
 var preload = [
     { id: 'Device', promise: S.root.findFirst('Device') },
@@ -156,6 +165,7 @@ const App = {
     assets: {},
     settings: settings,
     debug: debug,
+    zombieBlendTrees: zombieBlendTrees,
     zombieBones: zombieBones,
     brainsTotal: brainsTotal,
     time: T.ms.div(1000),
@@ -178,153 +188,36 @@ const App = {
             this.assets[preload[i].id] = promise;
         });
         
-        this.onPreloadMixed();
+        this.preloadZombieBlendTree();
       
     },
 
-    onPreloadMixed(){
-        this.preloadMixed = [];
+    preloadZombieBlendTree(){
+        this.preloadZombieBlendTree = [];
   
-        for(let i = 0; i < this.zombieBones.length; i++){
-            const id = this.zombieBones[i];
-            this.preloadMixed.push({ id: 'zombieMixed.' + id, promise: this.assets['zombieMixed'].findFirst(id) });
+        for(let i = 0; i < this.zombieBlendTrees.length; i++){
+            const parentID = this.zombieBlendTrees[i];
+            for(let k = 0; k < this.zombieBones.length; k++){
+                const boneID = this.zombieBones[k];
+                this.preloadZombieBlendTree.push({ id: parentID + '.' + boneID, promise: this.assets[parentID].findFirst(boneID) });
+            }
         }
-  
+        
         let promises = [];
-        this.preloadMixed.forEach((asset, i) => {
+        this.preloadZombieBlendTree.forEach((asset, i) => {
             promises.push(asset.promise);
         });
-        Promise.all(promises).then(results => this.onLoadMixed(results));   
+        Promise.all(promises).then(results => this.onLoadZombieBlendTree(results));   
         
     },
 
-    onLoadMixed(results) {
+    onLoadZombieBlendTree(results) {
         results.forEach((promise, i) => {
-        this.assets[this.preloadMixed[i].id] = promise;
-        });
-    
-        this.onPreloadShadowMixed();
-    },       
-
-    onPreloadShadowMixed(){
-        this.preloadShadowMixed = [];
-    
-        for(let i = 0; i < this.zombieBones.length; i++){
-            const id = this.zombieBones[i];
-            this.preloadShadowMixed.push({ id: 'zombieShadowMixed.' + id, promise: this.assets['zombieShadowMixed'].findFirst(id) });
-        }
-    
-        let promises = [];
-        this.preloadShadowMixed.forEach((asset, i) => {
-            promises.push(asset.promise);
-        });
-        Promise.all(promises).then(results => this.onLoadShadowMixed(results));   
-        
-    },
-    
-    onLoadShadowMixed(results) {
-        results.forEach((promise, i) => {
-        this.assets[this.preloadShadowMixed[i].id] = promise;
-        });
-    
-        this.onPreloadIdle();
-    },             
-
-    onPreloadIdle(){
-        this.preloadIdle = [];
-  
-        for(let i = 0; i < this.zombieBones.length; i++){
-            const id = this.zombieBones[i];
-            this.preloadIdle.push({ id: 'zombieIdle.' + id, promise: this.assets['zombieIdle'].findFirst(id) });
-        }
-  
-        let promises = [];
-        this.preloadIdle.forEach((asset, i) => {
-            promises.push(asset.promise);
-        });
-        Promise.all(promises).then(results => this.onLoadIdle(results));   
-        
-    },
-
-    onLoadIdle(results) {
-        results.forEach((promise, i) => {
-            this.assets[this.preloadIdle[i].id] = promise;
-        });
-    
-        this.onPreloadWalk();
-    }, 
-
-    onPreloadWalk(){
-        this.preloadWalk = [];
-  
-        for(let i = 0; i < this.zombieBones.length; i++){
-            const id = this.zombieBones[i];
-            this.preloadWalk.push({ id: 'zombieWalk.' + id, promise: this.assets['zombieWalk'].findFirst(id) });
-        }
-  
-        let promises = [];
-        this.preloadWalk.forEach((asset, i) => {
-            promises.push(asset.promise);
-        });
-        Promise.all(promises).then(results => this.onLoadWalk(results));   
-        
-    },
-
-    onLoadWalk(results) {
-        results.forEach((promise, i) => {
-        this.assets[this.preloadWalk[i].id] = promise;
-        });
-    
-        this.onPreloadSwing();
-    },     
-
-    onPreloadSwing(){
-        this.preloadSwing = [];
-  
-        for(let i = 0; i < this.zombieBones.length; i++){
-            const id = this.zombieBones[i];
-            this.preloadSwing.push({ id: 'zombieSwing.' + id, promise: this.assets['zombieSwing'].findFirst(id) });
-        }
-  
-        let promises = [];
-        this.preloadSwing.forEach((asset, i) => {
-            promises.push(asset.promise);
-        });
-        Promise.all(promises).then(results => this.onLoadSwing(results));   
-        
-    },
-
-    onLoadSwing(results) {
-        results.forEach((promise, i) => {
-        this.assets[this.preloadSwing[i].id] = promise;
-        });
-    
-        this.onPreloadDance();
-    },     
-
-    onPreloadDance(){
-        this.preloadDance = [];
-  
-        for(let i = 0; i < this.zombieBones.length; i++){
-            const id = this.zombieBones[i];
-            this.preloadDance.push({ id: 'zombieDance.' + id, promise: this.assets['zombieDance'].findFirst(id) });
-        }
-  
-        let promises = [];
-        this.preloadDance.forEach((asset, i) => {
-            promises.push(asset.promise);
-        });
-        Promise.all(promises).then(results => this.onLoadDance(results));   
-        
-    },
-
-    onLoadDance(results) {
-        results.forEach((promise, i) => {
-        this.assets[this.preloadDance[i].id] = promise;
+            this.assets[this.preloadZombieBlendTree[i].id] = promise;
         });
     
         this.complete();
-    },     
+    },        
 
     complete(){ 
         this.cameraInfoPosition = new CameraInfoPosition(this);
