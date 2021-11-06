@@ -62,7 +62,7 @@ let debug = false;
 //https://www.instagram.com/creativefrv/
 
 //Lenslist Halloween Tricks & Treats Hackathon
-//https://lenslist.co/dare/lenslist-x-spark-ar-present-call-for-content-1-halloween-trickstreats/
+//https://blog.lenslist.co/2021/11/03/winners-announcement-1-c4c-halloween/
 
 
 

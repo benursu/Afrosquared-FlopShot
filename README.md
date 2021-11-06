@@ -17,7 +17,7 @@ Follow this link to play on Instagram!
 ## Lenslist Halloween Tricks & Treats Hackathon
 This project was a top prize winner in the awesome hackathon put on by Lenslist.  Thank you Lenslist for being such an important part of the community!  You all rock!
 
-[https://lenslist.co/dare/lenslist-x-spark-ar-present-call-for-content-1-halloween-trickstreats/](https://lenslist.co/dare/lenslist-x-spark-ar-present-call-for-content-1-halloween-trickstreats/)
+[https://blog.lenslist.co/2021/11/03/winners-announcement-1-c4c-halloween/](https://blog.lenslist.co/2021/11/03/winners-announcement-1-c4c-halloween/)
 
 ## Spark AR Studio
 This project was built using Meta Spark AR Studio v123.
